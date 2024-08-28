@@ -8,15 +8,16 @@ import (
 
 var screenWidth int
 var screenHeight int
+
 func init() {
 	screenWidth, screenHeight = robotgo.GetScreenSize()
 }
 func transX(x1 int) (x2 int) {
-	x2 = x1*screenWidth/1920
+	x2 = x1 * screenWidth / 1920
 	return
 }
 func transY(y1 int) (y2 int) {
-	y2 = y1*screenHeight/1080
+	y2 = y1 * screenHeight / 1080
 	return
 }
 func main() {
@@ -36,6 +37,18 @@ func main() {
 	//
 	//}
 
+	//测试用的多余部分，可以直接删掉
+	//for i:=0; i <5; i++ {
+	//	robotgo.Sleep(1)
+	//	col := robotgo.GetPixelColor(transX(x), transY(y))
+	//	fmt.Println("color = ", col)
+	//
+	//	robotgo.Sleep(1)
+	//	robotgo.Move(transX(x), transY(y))
+	//	robotgo.Sleep(1)
+	//
+	//到这里结束
+
 	fmt.Println("OpenCV version:", gocv.Version())
 
 	// 测试加载图像
@@ -47,10 +60,5 @@ func main() {
 	defer img.Close()
 
 	fmt.Printf("Image dimensions: %d x %d\n", img.Cols(), img.Rows())
-
-
-
-
-
 
 }
